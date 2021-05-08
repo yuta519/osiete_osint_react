@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 
-import tweetsReducer from "./tweetsReducer";
+import osintsReducer from "./osintsReducer";
 import userReducer from "./userReducer";
 
 export default combineReducers({
-  tweetsReducer,
+  osintsReducer,
   userReducer
 })
