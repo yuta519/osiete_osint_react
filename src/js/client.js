@@ -17,7 +17,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <Layout>
-        <Route path="/" component={Home}></Route>
+        <Route exact path="/" component={Home}></Route>
         <Route path="/hot_osint" component={HotOsint}></Route>
       </Layout>
     </Router>
