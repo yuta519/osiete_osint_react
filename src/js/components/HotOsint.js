@@ -44,7 +44,7 @@ export default class HotOsint extends React.Component {
     
     return (
       <div>
-        <h1>OSINT DATA</h1>
+        <h1>Hot OSINT</h1>
         <table class="table table-striped">
           <thead>
             <tr>

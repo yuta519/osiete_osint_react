@@ -1,4 +1,5 @@
 import React from "react";
+import {Row} from "react-bootstrap"
 import ReactDOM from "react-dom";
 
 export default class Footer extends React.Component {
@@ -8,11 +9,9 @@ export default class Footer extends React.Component {
     };
     return (
       <footer style={footerStyles}>
-        <div class="row">
-          <div class="row">
+          <Row>
             <p>Copyright &copy; osiete_osint.jp</p>
-          </div>
-        </div>
+          </Row>
       </footer>
     );
   }
