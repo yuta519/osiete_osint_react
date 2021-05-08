@@ -2,13 +2,13 @@ import axios from "axios";
 
 export function fetchOsints() {
   return function(dispatch) {
-    dispatch({type: "FETCH_TWEETS"});
-    axios.get("http://localhost:18080")
+    dispatch({type: "FETCH_OSINTS"});
+    axios.get("http://localhost:8000")
       .then((response) => {
-        dispatch({type: "FETCH_TWEETS_FULFILLED", payload: response.data})
+        dispatch({type: "FETCH_OSINTS_FULFILLED", payload: response.data})
       })
       .catch((err) => {
-        dispatch({type: "FETCH_TWEETS_REJECTED", payload: err})
+        dispatch({type: "FETCH_OSINTS_REJECTED", payload: err})
       });
   };
 }
