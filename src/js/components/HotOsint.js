@@ -1,6 +1,17 @@
 import axios from "axios";
 import React from "react";
+import { connect } from "react-redux";
 
+import { fetchUser } from "../actions/userActions";
+
+
+@connect((store) => {
+  return {
+    user: store.userReducer.user,
+    userFetched: store.userReducer.fetched,
+    osintss: store.osintsReducer.osints
+  };
+})
 export default class HotOsint extends React.Component {
   
   constructor(props) {
@@ -11,6 +22,7 @@ export default class HotOsint extends React.Component {
   }
   
   componentDidMount() {
+    this.props.dispatch(fetchUser());
     axios.get('http://localhost:8000/api/data')
       .then(res => { 
         const osint = res.data;
@@ -22,6 +34,7 @@ export default class HotOsint extends React.Component {
   
 
   render() {
+    console.log(this.props.user);
     const { osints } = this.state;
     const osintsComponet = osints.map((osint) => {
       // const icon = complete ? "\u2714" : "\u2716";
