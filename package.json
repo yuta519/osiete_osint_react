@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "react-bootstrap": "^1.5.2",
+    "react-google-chart": "^0.1.2",
     "react-google-charts": "^3.0.15"
   }
 }
