@@ -19,21 +19,11 @@ export default class HotOsint extends React.Component {
   
   constructor(props) {
     super();
-    // this.state = {
-    //   osints: []
-    // };
   }
   
   componentDidMount() {
     this.props.dispatch(fetchUser());
     this.props.dispatch(fetchOsints());
-    // axios.get('http://localhost:8000/api/data')
-    //   .then(res => { 
-    //     const osint = res.data;
-    //     this.setState({
-    //       osints: [...osint]
-    //     });
-    //   });
   }
   fetchOsints() {
     this.props.dispatch(fetchOsints());
@@ -68,35 +58,7 @@ export default class HotOsint extends React.Component {
         </tr>
       );
 
-  });
-    
-    // const { osints } = this.state;
-    // const osintsComponet = osints.map((osint) => {
-    //   // const icon = complete ? "\u2714" : "\u2716";
-    //   const path = 'detail/' + osint.data_id;
-    //   let risk = '';  
-    //   if (osint.malicious_level == 1) {
-    //     risk = 'Dangerous';
-    //   } else {
-    //     risk = 'Safe';
-    //   }  
-    //   return (
-    //   <tr key={osint.data_id} href={osint.data_id} {...osint}>
-    //     <td><a href={path}>{osint.data_id}</a></td>
-    //     <td><span><a href={osint.gui_url}>{osint.gui_url}</a></span></td>
-    //     <td><span>{osint.last_analyzed}</span></td>
-    //     <td><span>{risk}</span></td>
-    //   </tr>
-    // );
-    // });
-
-    // return (
-    //   <div>
-    //     <h1>{user.name}</h1>
-    //     <ul>{mappedOsints}</ul>
-    //   </div>
-    // );
-
+    });
     
     return (
       <div>
