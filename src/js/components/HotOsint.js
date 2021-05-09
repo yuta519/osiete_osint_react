@@ -1,6 +1,4 @@
-import axios from "axios";
 import React from "react";
-import { Chart } from 'react-bootstrap';
 import { connect } from "react-redux";
 
 import { fetchOsints } from "../actions/osintActions";
@@ -41,7 +39,7 @@ export default class HotOsint extends React.Component {
   
     const mappedOsints = osints.map(osint => {
       
-      const path = 'detail/' + osint.data_id;
+      const path = 'osint_detail/' + osint.data_id;
       let risk = '';  
       if (osint.malicious_level == 1) {
         risk = 'Dangerous';

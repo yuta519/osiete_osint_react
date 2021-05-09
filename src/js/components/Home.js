@@ -16,8 +16,8 @@ export default class Home extends React.Component {
               <Card.Header as="h5">Featured</Card.Header>
               <Card.Body>
                 <Card.Title>Special title treatment</Card.Title>
-                <Card.Text>
-                  With supporting text below as a natural lead-in to additional content.
+                <Card.Text className="text-primary" as="h1">
+                  54%
                 </Card.Text>
                 <Button variant="primary">Go somewhere</Button>
               </Card.Body>
@@ -27,8 +27,8 @@ export default class Home extends React.Component {
               <Card.Header as="h5">Featured</Card.Header>
               <Card.Body>
                 <Card.Title>Special title treatment</Card.Title>
-                <Card.Text>
-                  With supporting text below as a natural lead-in to additional content.
+                <Card.Text className="text-primary" as="h2">
+                  3.2K
                 </Card.Text>
                 <Button variant="primary">Go somewhere</Button>
               </Card.Body>
@@ -38,8 +38,8 @@ export default class Home extends React.Component {
               <Card.Header as="h5">Featured</Card.Header>
               <Card.Body>
                 <Card.Title>Special title treatment</Card.Title>
-                <Card.Text>
-                  With supporting text below as a natural lead-in to additional content.
+                <Card.Text className="text-primary" as="h2">
+                  520
                 </Card.Text>
                 <Button variant="primary">Go somewhere</Button>
               </Card.Body>
@@ -49,8 +49,8 @@ export default class Home extends React.Component {
               <Card.Header as="h5">Featured</Card.Header>
               <Card.Body>
                 <Card.Title>Special title treatment</Card.Title>
-                <Card.Text>
-                  With supporting text below as a natural lead-in to additional content.
+                <Card.Text className="text-primary" as="h2">
+                  32%
                 </Card.Text>
                 <Button variant="primary">Go somewhere</Button>
               </Card.Body>
