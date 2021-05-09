@@ -26,7 +26,7 @@ export default class HotOsint extends React.Component {
   
   componentDidMount() {
     this.props.dispatch(fetchUser());
-    // this.props.dispatch(fetchOsints());
+    this.props.dispatch(fetchOsints());
     // axios.get('http://localhost:8000/api/data')
     //   .then(res => { 
     //     const osint = res.data;
@@ -46,7 +46,7 @@ export default class HotOsint extends React.Component {
     }
     if (!osints.length) {
       console.log(user, osints);
-      return <button onClick={this.fetchOsints.bind(this)}>load osints</button>;
+      return <button onClick={this.fetchOsints.bind(this)}>Reload OSINTS</button>;
     }
   
     const mappedOsints = osints.map(osint => {
