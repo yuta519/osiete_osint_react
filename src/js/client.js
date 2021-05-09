@@ -7,6 +7,7 @@ import Layout from "./components/Layout/Layout";
 
 import Home from "./components/Home";
 import HotOsint from "./components/HotOsint";
+import Search from "./components/Search";
 
 import store from "./store";
 
@@ -18,6 +19,7 @@ ReactDOM.render(
     <Router>
       <Layout>
         <Route exact path="/" component={Home}></Route>
+        <Route path="/search" component={Search}></Route>
         <Route path="/hot_osint" component={HotOsint}></Route>
       </Layout>
     </Router>
