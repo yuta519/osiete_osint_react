@@ -4,7 +4,6 @@ export default function reducer(state={
     fetched: false,
     error: null,
   }, action) {
-
     switch (action.type) {
       case "FETCH_OSINTS": {
         return {...state, fetching: true};
@@ -17,7 +16,7 @@ export default function reducer(state={
           ...state,
           fetching: false,
           fetched: true,
-          tweets: action.payload
+          osints: action.payload
         };
       }
       case "ADD_OSINT": {
