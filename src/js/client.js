@@ -10,6 +10,7 @@ import HotOsint from "./components/HotOsint";
 import Search from "./components/Search";
 
 import store from "./store";
+import OsintDetail from "./components/OsintDetail";
 
 
 const app = document.getElementById('app');
@@ -19,8 +20,9 @@ ReactDOM.render(
     <Router>
       <Layout>
         <Route exact path="/" component={Home}></Route>
-        <Route path="/search" component={Search}></Route>
         <Route path="/hot_osint" component={HotOsint}></Route>
+        <Route path="/osint_detail" component={OsintDetail}></Route>
+        <Route path="/search" component={Search}></Route>
       </Layout>
     </Router>
   </Provider>, app);
