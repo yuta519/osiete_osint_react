@@ -27,7 +27,7 @@ export default class Home extends React.Component {
               <Card.Header as="h5">Featured</Card.Header>
               <Card.Body>
                 <Card.Title>Special title treatment</Card.Title>
-                <Card.Text className="text-primary" as="h2">
+                <Card.Text className="text-primary" as="h1">
                   3.2K
                 </Card.Text>
                 <Button variant="primary">Go somewhere</Button>
@@ -38,7 +38,7 @@ export default class Home extends React.Component {
               <Card.Header as="h5">Featured</Card.Header>
               <Card.Body>
                 <Card.Title>Special title treatment</Card.Title>
-                <Card.Text className="text-primary" as="h2">
+                <Card.Text className="text-primary" as="h1">
                   520
                 </Card.Text>
                 <Button variant="primary">Go somewhere</Button>
@@ -49,7 +49,7 @@ export default class Home extends React.Component {
               <Card.Header as="h5">Featured</Card.Header>
               <Card.Body>
                 <Card.Title>Special title treatment</Card.Title>
-                <Card.Text className="text-primary" as="h2">
+                <Card.Text className="text-primary" as="h1">
                   32%
                 </Card.Text>
                 <Button variant="primary">Go somewhere</Button>
