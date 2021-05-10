@@ -11,6 +11,7 @@ import Search from "./components/Search";
 
 import store from "./store";
 import OsintDetail from "./components/OsintDetail";
+import GlobalTrend from "./components/GlobalTrend";
 
 
 const app = document.getElementById('app');
@@ -23,6 +24,7 @@ ReactDOM.render(
         <Route path="/hot_osint" component={HotOsint}></Route>
         <Route path="/osint_detail" component={OsintDetail}></Route>
         <Route path="/search" component={Search}></Route>
+        <Route path="/global_trend" component={GlobalTrend}></Route>        
       </Layout>
     </Router>
   </Provider>, app);
