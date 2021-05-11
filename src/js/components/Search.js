@@ -28,7 +28,7 @@ export default class Search extends React.Component {
   }
 
   handleSubmit(event) {
-    if (this.state.type == null) {
+    if (this.state.type == null || this.state.type == '') {
       alert('Please select valid OSINT type.')
     } else {
       event.preventDefault();
