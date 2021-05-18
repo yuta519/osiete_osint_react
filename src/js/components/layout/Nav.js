@@ -31,7 +31,6 @@ export default class Navi extends React.Component {
             <Nav.Link href="search">Search OSINT</Nav.Link>
             <Nav.Link href="hot_osint">Hot OSINT</Nav.Link>
             <Nav.Link href="global_trend">Global Trend</Nav.Link>
-            <Nav.Link href="japan_trend">Japan Trend</Nav.Link>
             <Nav.Link href="services">Services</Nav.Link>
             <Nav.Link href="setting">Setting</Nav.Link>
           </Nav>

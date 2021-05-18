@@ -16,27 +16,14 @@ import { fetchUser } from "../actions/userActions";
   };
 })
 export default class OsintDetail extends React.Component {
-  
-  constructor(props) {
-    super();
-  }
-  
-  componentDidMount() {
-    this.props.dispatch(fetchUser());
-    this.props.dispatch(fetchOsints());
-  }
-  fetchOsints() {
-    this.props.dispatch(fetchOsints());
-  }
-
   render() {
-    return (
+    const pattern = /^\?ip=(.*)/;
+    const osint_id = location.search.match(pattern);
+    console.log(osint_id);
+    return (  
       <div>
-        <Chart
-          width={400}
-          height={120}
-          chartType="Gauge"
-          loader={<div>Loading Chart</div>}
+        <h1>detail : { osint_id[1] }</h1>
+        <Chart width={400} height={120} chartType="Gauge" loader={<div>Loading Chart</div>}
           data={[
             ['Label', 'Value'],
             ['Risk', 20],
@@ -55,4 +42,3 @@ export default class OsintDetail extends React.Component {
   }
 
 }
-

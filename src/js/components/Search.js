@@ -1,7 +1,7 @@
 import React from "react";
 
 import axios from "axios";
-import { Container , Form, Row, Col, Button} from 'react-bootstrap'
+import { Button, Container , Form, Row, Table } from 'react-bootstrap'
 
 
 export default class Search extends React.Component {
@@ -50,9 +50,9 @@ export default class Search extends React.Component {
 
   render() {
     return (
-      <Container style={{ marginTop: '100px' }}>
+      <>
         <h1>Search from OSINT</h1>
-        <Form style={{ margin: '50px' }} >
+        <Form style={{ margin: '30px' }} >
           <Form.Group controlId="exampleForm.ControlInput1">
             <Form.Label>OSINT you want to know</Form.Label>
             <Form.Control name='osint' type='text' placeholder='Input OSINT to search' onChange={this.handleChange} />
@@ -66,18 +66,39 @@ export default class Search extends React.Component {
               <option>FILEHASH</option>
             </Form.Control>
           </Form.Group>
-          {this.state.result ? (
-            <>
-              <p>{this.state.result.data.owner}</p>
-              <p>{this.state.result.data.gui}</p>
-              <p>{this.state.result.data.malicious_level}</p>
-            </>
-          ) : (
-              null
-          )}  
-          <Button style={{ margin: '30px', float: 'right' }} onClick={this.handleSubmit}>Search OSINT</Button>
+
+          <Button style={{ float: 'right' }} onClick={this.handleSubmit}>Search OSINT</Button>
         </Form>
-      </Container>
+        {this.state.result ? (
+          <>
+            <h1 style={{ marginTop: '100px'}}>OSIETE Osint Result</h1>
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>owner</td>
+                  <td>{this.state.result.data.owner}</td>
+                </tr>
+                <tr>
+                  <td>gui</td>
+                  <td>{this.state.result.data.gui}</td>
+                </tr>
+                <tr>
+                  <td>Malicious Level</td>
+                  <td>{this.state.result.data.malicious_level}</td>
+                </tr>
+              </tbody>
+            </Table>
+          </>
+        ) : (
+            null
+        )}  
+      </>
     );
   }
 }

@@ -39,7 +39,7 @@ export default class HotOsint extends React.Component {
   
     const mappedOsints = osints.map(osint => {
       
-      const path = 'osint_detail/' + osint.data_id;
+      const path = 'osint_detail?ip=' + osint.data_id;
       let risk = '';  
       if (osint.malicious_level == 1) {
         risk = 'Dangerous';
