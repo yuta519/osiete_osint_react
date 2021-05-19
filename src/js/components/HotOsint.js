@@ -40,18 +40,26 @@ export default class HotOsint extends React.Component {
     const mappedOsints = osints.map(osint => {
       
       const path = 'osint_detail?ip=' + osint.data_id;
-      let risk = '';  
+      let risk = '';
+      let type = '';
       if (osint.malicious_level == 1) {
         risk = 'Dangerous';
       } else {
         risk = 'Safe';
       }
+      if (osint.analyzing_type == 1) {
+        type = 'IP Address';
+      } else if (osint.analyzing_type == 2) {
+        type = 'Domain';
+      } else if (osint.analyzing_type == 3) {
+        type = 'Hash';
+      }
 
       return (
         <tr key={osint.data_id} href={osint.data_id} {...osint}>
           <td><a href={path}>{osint.data_id}</a></td>
-          <td><span><a href={osint.gui_url}>{osint.gui_url}</a></span></td>
           <td><span>{osint.last_analyzed}</span></td>
+          <td><span>{type}</span></td>
           <td><span>{risk}</span></td>
         </tr>
       );
@@ -65,8 +73,8 @@ export default class HotOsint extends React.Component {
           <thead>
             <tr>
               <th>IP Address</th> 
-              <th>VT GUI</th>
               <th>Last Time</th>
+              <th>Osint Type</th>
               <th>Risk</th>
             </tr>
           </thead>
