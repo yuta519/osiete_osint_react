@@ -32,14 +32,23 @@ export default class Search extends React.Component {
       alert('Please select valid OSINT type.')
     } else {
       event.preventDefault();
-      console.log(this.state);  
+      console.log(this.state);
       axios.post('http://localhost:8000/osints/api', {
           data_id: this.state.osint,
           analyzing_type: this.state.type,
           malicious_level: 0,
       }).then(response => {
+        if (response.data.malicious_level == 1) {
+          response.data.malicious_level = 'Dangerous'
+        } else if (response.data.malicious_level == 2) {
+          response.data.malicious_level = 'Suspicious'
+        } else if (response.data.malicious_level == 3) {
+          response.data.malicious_level = 'Safe';
+        } else {
+          response.data.malicious_level = 'Unknown'
+        }
         this.setState({result: response});
-        console.log(response);
+        console.log(this.state.result);
       }).catch(function (error) {
           console.log(error);
       });
@@ -69,6 +78,7 @@ export default class Search extends React.Component {
 
           <Button style={{ float: 'right' }} onClick={this.handleSubmit}>Search OSINT</Button>
         </Form>
+
         {this.state.result ? (
           <>
             <h1 style={{ marginTop: '100px'}}>OSIETE Osint Result</h1>
@@ -98,6 +108,7 @@ export default class Search extends React.Component {
         ) : (
             null
         )}  
+
       </>
     );
   }
