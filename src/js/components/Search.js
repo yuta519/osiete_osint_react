@@ -54,6 +54,19 @@ export default class Search extends React.Component {
       });
       console.log(this.state.type);
     }
+    // if (this.state.result) {
+    //   if (this.state.result.data.malicious_level == 1) {
+    //     malicious_level = 'Dangerous';
+    //   } else if (this.state.result.data.malicious_level == 2) {
+    //     malicious_level = 'Suspicious';
+    //   } else if(this.state.result.data.malicious_level == 3) {
+    //     malicious_level = 'Safe';
+    //   } else {
+    //     malicious_level = 'None';
+    //   }
+    // } else {
+    //   malicious_level = null;
+    // }
 
   }
 
@@ -80,6 +93,7 @@ export default class Search extends React.Component {
         </Form>
 
         {this.state.result ? (
+          // { this.state.result.data.malicious_level ?}
           <>
             <h1 style={{ marginTop: '100px'}}>OSIETE Osint Result</h1>
             <Table striped bordered hover>
