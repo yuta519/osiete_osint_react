@@ -1,9 +1,6 @@
-export default function reducer(state={
-    osints: [],
-    fetching: false,
-    fetched: false,
-    error: null,
-  }, action) {
+const initialState = {osints: [], fetching: false, fetched: false, error: null}
+
+export default function reducer(state=initialState, action) {
     switch (action.type) {
       case "FETCH_OSINTS": {
         return {...state, fetching: true};
