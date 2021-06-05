@@ -1,14 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { fetchOsints } from "../actions/osintActions";
-import { fetchUser } from "../actions/userActions";
+import { fetchDangerousOsints } from "../actions/osintActions";
 
 
 @connect((store) => {
   return {
-    user: store.userReducer.user,
-    userFetched: store.userReducer.fetched,
     osints: store.osintsReducer.osints,
     fetching: store.osintsReducer.fetching
   };
@@ -20,11 +17,7 @@ export default class HotOsint extends React.Component {
   }
   
   componentDidMount() {
-    this.props.dispatch(fetchUser());
-    this.props.dispatch(fetchOsints());
-  }
-  fetchOsints() {
-    this.props.dispatch(fetchOsints());
+    this.props.dispatch(fetchDangerousOsints());
   }
 
   render() {
@@ -34,11 +27,10 @@ export default class HotOsint extends React.Component {
     }
     if (!osints.length) {
       console.log(user, osints);
-      return <button onClick={this.fetchOsints.bind(this)}>Reload OSINTS</button>;
+      return <button onClick={fetchDangerousOsints.bind(this)}>Reload OSINTS</button>;
     }
   
     const mappedOsints = osints.map(osint => {
-      
       const path = 'osint_detail?ip=' + osint.data_id;
       let risk = '';
       let type = '';
@@ -54,7 +46,6 @@ export default class HotOsint extends React.Component {
       } else if (osint.analyzing_type == 3) {
         type = 'Hash';
       }
-
       return (
         <tr key={osint.data_id} href={osint.data_id} {...osint}>
           <td><a href={path}>{osint.data_id}</a></td>
@@ -63,7 +54,6 @@ export default class HotOsint extends React.Component {
           <td><span>{risk}</span></td>
         </tr>
       );
-
     });
     
     return (
@@ -72,8 +62,8 @@ export default class HotOsint extends React.Component {
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>IP Address</th> 
-              <th>Last Time</th>
+              <th>OSINT</th> 
+              <th>Last Update Time</th>
               <th>Osint Type</th>
               <th>Risk</th>
             </tr>
