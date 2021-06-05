@@ -27,11 +27,11 @@ export default class Navi extends React.Component {
         <Navbar bg="dark" variant="dark">
           <Navbar.Brand href="/">OSIETE OSINT</Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+            {/* <Nav.Link href="/">Home</Nav.Link> */}
             <Nav.Link href="search">Search OSINT</Nav.Link>
             <Nav.Link href="hot_osint">Hot OSINT</Nav.Link>
-            <Nav.Link href="global_trend">Global Trend</Nav.Link>
-            <Nav.Link href="services">Services</Nav.Link>
+            {/* <Nav.Link href="global_trend">Global Trend</Nav.Link> */}
+            {/* <Nav.Link href="services">Services</Nav.Link> */}
             <Nav.Link href="setting">Setting</Nav.Link>
           </Nav>
           <Form inline>
