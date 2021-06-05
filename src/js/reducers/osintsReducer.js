@@ -16,28 +16,16 @@ export default function reducer(state=initialState, action) {
           osints: action.payload
         };
       }
-      case "ADD_OSINT": {
-        return {
-          ...state,
-          tweets: [...state.tweets, action.payload]
-        };
+      case "FETCH_DANGEROUS_OSINTS": {
+        return {...state, fetching: true};
       }
-      case "UPDATE_OSINT": {
-        const { id, text } = action.payload;
-        const newTweets = [...state.tweets];
-        const tweetToUpdate = newTweets.findIndex(tweet => tweet.id === id);
-        newTweets[tweetToUpdate] = action.payload;
-
+      case "FETCH_DANGEROUS_OSINTS_FULFILLED": {
         return {
           ...state,
-          tweets: newTweets
-        };
-      }
-      case "DELETE_OSINT": {
-        return {
-          ...state,
-          tweets: state.tweets.filter(tweet => tweet.id !== action.payload)
-        };
+          fetching: false,
+          fetched: true,
+          osints:action.payload
+        }
       }
     }
 
